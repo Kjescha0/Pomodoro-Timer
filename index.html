@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="\css\style.css">
+    <link rel="icon" type="image/png" href="/assets/white-cat.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Pomodoro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text">How many Pomodoros do you want to finish?</div>
+        <div>
+            <select class="controlbutton" id="totalPomodorosInput">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <div class="text">Which Pomodoro type do you want to apply?</div>
+        <div>
+            <button title="25 minutes working with 5 minutes break" class="controlbutton" id="pomodoroType25">25min</button>
+            <button title="50 minutes working with 10 minutes break" class="controlbutton" id="pomodoroType50">50min</button>
+        </div>
+        
+        <button title="continue to timer" class="startbutton"id="startTimer">Start Timer</button>
+
+        <script>
+            let pomodoroType = 25;
+
+            document.getElementById("startTimer").addEventListener("click", () => {
+                const totalPomodorosInput = document.getElementById("totalPomodorosInput").value;
+                window.location.href = `timer.html?totalPomodoros=${totalPomodorosInput}&pomodoroType=${pomodoroType}`;
+            });
+            document.getElementById("pomodoroType25").addEventListener("click", () => {
+                document.getElementById("pomodoroType25").style.backgroundColor = "rgb(184, 104, 144)";
+                document.getElementById("pomodoroType50").style.backgroundColor = "";
+                pomodoroType = 25;
+            })
+            document.getElementById("pomodoroType50").addEventListener("click", () => {
+                document.getElementById("pomodoroType50").style.backgroundColor = "rgb(184, 104, 144)";
+                document.getElementById("pomodoroType25").style.backgroundColor = "";
+                pomodoroType = 50;
+            })
+            document.getElementById("totalPomodorosInput").addEventListener("click", () => {
+                document.getElementById("totalPomodorosInput").style.backgroundColor = "rgb(184, 104, 144)";
+            })
+        </script>
+    </div>
+</body>
+</html>

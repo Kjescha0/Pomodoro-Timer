@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="\css\style.css">
+    <link rel="icon" type="image/png" href="/assets/white-cat.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <div class="container">
+        <div class="banner hidden" id="banner">
+            <div class="banner-content">
+                <p id="banner-text">Time for a break!</p>
+                <button class="controlbutton" id="close-banner">OK</button>
+            </div>
+        </div>
+        <div class="text" id="head">Start Pomodoro!</div>
+        <div class="timer">
+            <span id="timer"><span id="pomodoroStartTimeWork">--</span>:00</span>
+        </div>
+        <div class="text">
+            <span id="counter">0/<span id="totalPomodoros">--</span> Pomodoros finished! </span>
+        </div>
+        <div>
+            <button title="Starts or continues the timer" class="controlbutton" id="start">Start</button>
+            <button title="Stops the timer" class="controlbutton" id="stop">Stop</button>
+            <button title="Resets the timer" class="controlbutton" id="reset">Reset</button>
+        </div>
+        <div>
+            <img src="/assets/white-cat.gif" alt="Pomodoro Animation" class="pixel-art">
+        </div>
+        
+        <script src="\javascript\script.js"></script>
+    </div>
+</body>
+</html>
