@@ -13,8 +13,8 @@ const urlParams = new URLSearchParams(window.location.search);
 let totalPomodoros = parseInt(urlParams.get('totalPomodoros')) || 1;
 let pomodoroType = parseInt(urlParams.get('pomodoroType')) || 25;
 
-const STARTTIMEWORK25 = 6; // 25 minutes, 1500s
-const STARTTIMEBREAK5 = 3;  // 5  minutes, 300s
+const STARTTIMEWORK25 = 5; // 25 minutes, 1500s
+const STARTTIMEBREAK5 = 2;  // 5  minutes, 300s
 const STARTTIMEWORK50 = 3000; // 50 minutes, 3000s
 const STARTTIMEBREAK10 = 600; // 10 minutes, 600s
 
@@ -129,8 +129,9 @@ closeBannerBtn.addEventListener("click", () => {
     banner.classList.add("hidden");
 })
 
+setPomodoroType();
+updateDisplay();
+
 document.getElementById('totalPomodoros').textContent = totalPomodoros;
 document.getElementById('pomodoroStartTimeWork').textContent = WORKTIME / 60;
 
-setPomodoroType();
-updateDisplay();
