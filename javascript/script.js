@@ -82,6 +82,7 @@ function switchWorkphase() {
 
 
 startButton.addEventListener("click", () => { 
+    alarmSound.load();
     if(timer !== null) {
         return; // prevents multiple timer
     }
