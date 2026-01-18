@@ -7,7 +7,7 @@ const progressOutput = document.getElementById("counter");
 const banner = document.getElementById("banner");
 const bannerText = document.getElementById("banner-text");
 const closeBannerBtn = document.getElementById("close-banner");
-const alarmSound =  new Audio('/assets/meow.mp3');
+const alarmSound =  new Audio('assets/meow.mp3');
 
 const urlParams = new URLSearchParams(window.location.search);
 let totalPomodoros = parseInt(urlParams.get('totalPomodoros')) || 1;
