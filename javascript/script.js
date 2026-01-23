@@ -34,7 +34,9 @@ resetButton.disabled = true;
 function updateDisplay() {
     let minutes = Math.floor(timerValue / 60);
     let seconds = timerValue % 60;
-    timeOutput.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    timeOutput.textContent = timeString;
+    document.title = `${timeString} - ${isWorkPhase ? 'Work' : 'Break'}`;
 
     header.textContent = `${isWorkPhase ? 'Working' : 'Relaxing'}`;
     progressOutput.textContent = `${pomodoroCounter}/${totalPomodoros} Pomodoros finished!`;
@@ -105,7 +107,7 @@ startButton.addEventListener("click", () => {
         switchWorkphase();
     }
     updateDisplay();
-    }, 100); // recalls every 10 second (100ms)
+    }, 1000); // recalls every second (1000ms)
 })
 
 stopButton.addEventListener("click", () => {
